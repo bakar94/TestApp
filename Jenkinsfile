@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'docker image ls'
+                sh 'docker image ls -v $(which docker):/opt/homebrew/bin/docker'
                 sh '''cd App/v1
                     docker image ls
                     docker build -t jenkins-pipeline .
