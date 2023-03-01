@@ -9,11 +9,11 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'docker images -a'
+                sh 'docker image ls'
                 sh '''cd App/v1
-                    docker images -a
+                    docker image ls
                     docker build -t jenkins-pipeline .
-                    docker images -a
+                    docker image ls
                     cd ../..'''
             }
         }
