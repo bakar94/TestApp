@@ -1,0 +1,5 @@
+services:
+  web:
+    build: ./App/v1
+    ports:
+      - "8080:8080"
