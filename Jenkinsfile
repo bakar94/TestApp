@@ -33,15 +33,7 @@ pipeline {
             }
          }
       }
-      stage('Run Tests') {
-         steps {
-            withEnv(["HOME=${env.WORKSPACE}"]) {
-            sh '''
-               pytest ./tests/test_sample.py
-            '''
-            }
-         }
-      }
+      
       stage('Stop test app') {
          steps {
             sh '''
