@@ -13,5 +13,5 @@ app.get('/', function(req, res) {
   });
 });
 
-app.listen(8080);
+app.listen(4242);
 module.exports.getApp = app;
