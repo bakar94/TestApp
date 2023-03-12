@@ -33,7 +33,7 @@ pipeline {
             }
          }
         }
-        stage('Run Tests') {
+        stage('Run Pytest') {
          steps {
             sh """
                python3 -m pytest ./tests/test_sample.py
