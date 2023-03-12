@@ -32,7 +32,17 @@ pipeline {
             }
          }
         }
-      stage('Stop test app') {
+        stage('Run Tests') {
+         steps {
+            pwsh(script: """
+               virtualenv testenv -p /Applications/anaconda3/bin/python
+               source testenv/bin/activate
+               pip install -U pytest 
+               pytest ./tests/test_sample.py
+            """)
+         }
+      }
+        stage('Stop test app') {
          steps {
             sh '''
                docker-compose down
