@@ -34,12 +34,12 @@ pipeline {
         }
         stage('Run Tests') {
          steps {
-            pwsh(script: """
+            sh """
                virtualenv testenv -p /Applications/anaconda3/bin/python
                source testenv/bin/activate
                pip install -U pytest 
                pytest ./tests/test_sample.py
-            """)
+            """
          }
       }
         stage('Stop test app') {
